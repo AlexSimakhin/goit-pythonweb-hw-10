@@ -1,6 +1,6 @@
 fastapi
 sqlalchemy
-pydantic
+pydantic[email]
 asyncpg
 psycopg2-binary
 python-dotenv
