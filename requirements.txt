@@ -1,7 +1,13 @@
 fastapi
 sqlalchemy
 pydantic[email]
-asyncpg
 psycopg2-binary
 python-dotenv
 uvicorn
+passlib[bcrypt]
+bcrypt==4.0.1
+python-jose
+email-validator
+cloudinary
+slowapi
+python-multipart

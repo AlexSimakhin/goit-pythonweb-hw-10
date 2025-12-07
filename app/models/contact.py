@@ -3,14 +3,16 @@ SQLAlchemy models for the Contacts REST API.
 Defines the Contact model representing a contact entity in the database.
 """
 
-from sqlalchemy import Column, Integer, String, Date
-from database import Base
+from sqlalchemy import Column, Date, ForeignKey, Integer, String
+
+from app.database import Base
+
 
 class Contact(Base):
-    """
-    SQLAlchemy model for storing contact information.
-    """
+    """SQLAlchemy model for storing contact information."""
+
     __tablename__ = 'contacts'
+
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
@@ -18,3 +20,4 @@ class Contact(Base):
     phone = Column(String, nullable=False)
     birthday = Column(Date, nullable=False)
     extra = Column(String, nullable=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
